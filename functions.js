@@ -1,7 +1,7 @@
 function IsValidEmail(email) {
     var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
     return filter.test(email);
-}    	
+}
 
 function IsValidPhone(phone) {
     var filter = /^[0-9\s\.\-\(\)]{8,}$/;
@@ -11,10 +11,10 @@ function IsValidPhone(phone) {
 function IsDigit(digit) {
     var filter = /^\s*(\+|-)?\d+\s*$/;
     return filter.test(digit);
-}       
+}
 
 function getMonth(digit) {
-    var month = new Array();
+    var month = [];
         month[0] = "Jan";
         month[1] = "Feb";
         month[2] = "Mar";
@@ -26,7 +26,7 @@ function getMonth(digit) {
         month[8] = "Sep";
         month[9] = "Oct";
         month[10] = "Nov";
-        month[11] = "Dec";            
+        month[11] = "Dec";
         
     return month[digit];
 }
@@ -40,15 +40,15 @@ function decodeEntities(input) {
 }
 
 // Get query param
-function getParameterByName(name) { 
+function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
     
     var regexS = "[\\?&]" + name + "=([^&#]*)";
     var regex = new RegExp(regexS);
     var results = regex.exec(window.location.search);
     
-    if(results == null)
+    if(results === null)
         return "";
     else
         return decodeURIComponent(results[1].replace(/\+/g, " "));
-};
+}
