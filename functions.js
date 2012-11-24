@@ -13,6 +13,11 @@ function IsDigit(digit) {
     return filter.test(digit);
 }
 
+function IsValidDecimal(value) {
+    var filter = /^\d*\.?\d{0,2}$/
+    return filter.test(value);
+}
+
 function getMonth(digit) {
     var month = [];
         month[0] = "Jan";
